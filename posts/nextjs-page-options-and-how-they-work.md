@@ -135,7 +135,7 @@ function Shows({ shows }) {
 
 We create a simple render of each show's own card, with an image and title of the anime show.
 
-![Top anime show in Next.js](https://cdn.hashnode.com/res/hashnode/image/upload/v1631712831922/I1Yb9K2DQ.png)
+![Top anime show in Next.js](../assets/blue-clouds.jpg)
 
 ## Creating dynamic page paths
 
