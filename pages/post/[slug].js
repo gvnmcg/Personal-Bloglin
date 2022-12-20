@@ -30,7 +30,7 @@ export default function PostPage({ frontmatter, content }) {
   return (
     <div className='prose mx-auto'>
       <h1>{frontmatter.title}</h1>
-      <ReactMarkdown children={content}/>
+      <ReactMarkdown>{content}</ReactMarkdown> 
     </div>
   );
 }
