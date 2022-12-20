@@ -1,6 +1,6 @@
 import fs from 'fs';
 import matter from 'gray-matter';
-import { MarkdownPreview } from 'react-marked-markdown';
+import ReactMarkdown from 'react-markdown'
 
 export async function getStaticPaths() {
   const files = fs.readdirSync('posts');
@@ -30,7 +30,7 @@ export default function PostPage({ frontmatter, content }) {
   return (
     <div className='prose mx-auto'>
       <h1>{frontmatter.title}</h1>
-      <MarkdownPreview value={ content }/>
+      <ReactMarkdown children={content}/>
     </div>
   );
 }
