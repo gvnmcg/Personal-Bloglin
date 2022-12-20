@@ -8,6 +8,7 @@ module.exports = {
       backgroundImage: theme => ({
        'blue-clouds': "url('/assets/blue-clouds.jpg')",
        'sands-fractal': "url('/assets/sands-fractal.jpg')",
+       'evening-clouds': "url('/assets/evening-clouds.jpg')",
       })
     }
   },
