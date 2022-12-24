@@ -3,7 +3,7 @@ import Link from 'next/link';
 
 export default function Sidebar(){
     return (
-    <aside class='bg-evening-clouds flex-col '>
+    <aside className='bg-evening-clouds flex-col '>
         <Link href='/'>
             <a>🏡</a>
         </Link>

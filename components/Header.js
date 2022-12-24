@@ -8,7 +8,7 @@ export default function Header(){
           <Link href='/'>
             <a>🏡</a>
           </Link>
-          <span class="mx-7">Gavin McGuire</span>
+          <span className="mx-7">Gavin McGuire</span>
         </div>
       </header>
     )
