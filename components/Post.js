@@ -4,9 +4,9 @@ import Image from 'next/image';
 
 export default function Post({ slug, frontmatter }){
     return (
-        <div className='border-gray-200 m-2 rounded-xl shadow-lg overflow-hidden'>
+        <div className='border-gray-200 m-2 rounded-xl shadow-lg hover:shadow-md overflow-hidden'>
           <Link  href={`/post/${slug}`}>
-            <a className='flex flex-row'>
+            <a className='flex flex-row '>
               <Image
                 width={300}
                 height={200}

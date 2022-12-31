@@ -1,19 +1,20 @@
-import React from 'react';
-import Link from 'next/link';
+import React from "react";
+import Link from "next/link";
 
-export default function Sidebar(){
-    return (
-    <aside className='bg-evening-clouds flex-col '>
-        <Link href='/'>
-            <a>🏡</a>
-        </Link>
-        <Link href='/'>
-            <a>Code</a>
-        </Link>
-        <Link href='/'>
-            <a>Tools</a>
-        </Link>
-    </aside>
-    )
+function SidebarLink({ text, url }) {
+  return (
+    <Link href={url}>
+      <a className="bg-slate-400 hover:opacity-75 p-5 rounded-md ">{text}</a>
+    </Link>
+  );
+}
 
+export default function Sidebar() {
+  return (
+    <div className="flex flex-col items-center flex-no-wrap sidebar space-y-2 overflow-y-auto bg-evening-clouds p-7 w-74 ">
+      <SidebarLink text={"🏡"} url={"/"} />
+      <SidebarLink text={"Code"} url={"/"} />
+      <SidebarLink text={"Tools"} url={"/"} />
+    </div>
+  );
 }

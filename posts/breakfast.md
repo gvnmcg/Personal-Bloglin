@@ -5,8 +5,7 @@ metaDesc: 'Review of the 1972 novel'
 # socialImage: images/22-09-2021.jpg
 socialImage: assets/books/boc-cover.jpg
 date: '2022-12-22'
-tags:
-  - books
+tags: ['books']
 ---
 
 This page was hastily written and not meant to be read by any at this moment.

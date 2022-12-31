@@ -3,6 +3,7 @@ import matter from 'gray-matter';
 import Image from 'next/image';
 import Link from 'next/link';
 import Post from '../components/Post';
+import Nav from '../components/Nav';
 
 export async function getStaticProps() {
   const files = fs.readdirSync('posts');
@@ -25,10 +26,12 @@ export async function getStaticProps() {
 }
 
 export default function Home({ posts }) {
+  let { slug, frontmatter } = posts[0]
+  console.log(slug)
   return (
-    <div className=' grid-cols-1  p-4 md:p-0'>
+    <div className='p-4 m-3 md:p-0'>
       {posts.map(({ slug, frontmatter }) => (
-        <div key={frontmatter.title}>
+        <div key={frontmatter.title} className='p-4 m-3 md:p-0'>
           <Post slug={slug} frontmatter={frontmatter} />
         </div>
       ))}

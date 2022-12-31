@@ -5,8 +5,8 @@ metaDesc: 'Review of the 1985 novel'
 # socialImage: images/22-09-2021.jpg
 socialImage: assets/books/white-noise-cover.jpeg
 date: '2022-12-22'
-tags:
-  - books
+tags: ['books']
+
 ---
 
 This page was hastily written and not meant to be read by any at this moment.
