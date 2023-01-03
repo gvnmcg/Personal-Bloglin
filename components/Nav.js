@@ -3,12 +3,10 @@ import Link from "next/link";
 
 function NavLink({text, url}) {
     return (
-        <div className="bg-black text-white hover:opacity-75 m-7 rounded-md ">
-            <div className='m-5 p-55'>
+        <div >
                 <Link href={url}>
-                    <a>{text}</a>
+                    <a className="bg-black text-white hover:opacity-75 m-7 p-3 rounded-md ">{text}</a>
                 </Link>  
-            </div>
         </div>
     )
 }

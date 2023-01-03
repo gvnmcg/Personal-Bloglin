@@ -43,7 +43,7 @@ export default function TaggedPosts({ filterPosts,tag }) {
   return (
     <div className="p-4 md:p-0">
       <h1 className="bg-black text-white hover:opacity-75 m-7 rounded-md text-center">{tag}</h1>
-      {filterPosts.map(({ slug, frontmatter }) => (
+      {filterPosts.map(({ slug, frontmatter }, ix) => (
         <div key={frontmatter.title}>
           <Post slug={slug} frontmatter={frontmatter} />
         </div>

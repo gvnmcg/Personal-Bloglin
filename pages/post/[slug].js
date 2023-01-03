@@ -30,7 +30,7 @@ export default function PostPage({ frontmatter, content }) {
   return (
     <div className='prose mx-auto'>
       <h1>{frontmatter.title}</h1>
-      <ReactMarkdown>{content}</ReactMarkdown> 
+      <ReactMarkdown className='bg-white rounded-md p-7'>{content}</ReactMarkdown> 
     </div>
   );
 }

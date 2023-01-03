@@ -6,7 +6,7 @@ import Nav from "./Nav";
 
 export default function Layout({ children }) {
   return (
-    <div className="bg-blue-clouds flex flex-col">
+    <div className="bg-blue-clouds bg-contain flex flex-col ">
       <Header />
 
       <div className="flex ">

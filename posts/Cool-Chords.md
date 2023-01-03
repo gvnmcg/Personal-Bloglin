@@ -1,14 +1,16 @@
 ---
 title: 'Cool Chords web app'
 metaTitle: 'Guitar Fretboard Web App'
-metaDesc: 'Review of the 1985 novel'
-# socialImage: images/22-09-2021.jpg
-socialImage: assets/books/white-noise-cover.jpeg
+metaDesc: 'Guitar Fretboard Web App'
+socialImage: 'images/cool-chords1.PNG'
 date: '2022-12-22'
 tags: ['code', 'music']
 ---
 
+⚠️WIP⚠️
+
 # Cool Chords App
+
 
 I made this app to find alternative chords while playing guitar.
 
