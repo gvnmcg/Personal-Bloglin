@@ -4,7 +4,7 @@ import Image from 'next/image';
 
 export default function Post({ slug, frontmatter }){
     return (
-        <div className='border-gray-200 m-2 rounded-xl shadow-lg hover:shadow-md overflow-hidden'>
+        <div className='bg-white  m-7 rounded-xl shadow-sm hover:shadow-lg overflow-hidden'>
           <Link  href={`/post/${slug}`}>
             <a className='flex flex-row '>
               <Image
@@ -13,7 +13,7 @@ export default function Post({ slug, frontmatter }){
                 alt={frontmatter.title}
                 src={`/${frontmatter.socialImage}`}
               />
-              <div>
+              <div >
                 <h1 className='m-4 font-bold'>{frontmatter.title}</h1>
                 <h2 className='m-4'>{frontmatter.metaDesc}</h2>
               </div>

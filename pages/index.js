@@ -29,7 +29,7 @@ export default function Home({ posts }) {
   let { slug, frontmatter } = posts[0]
   console.log(slug)
   return (
-    <div className='p-4 m-3 md:p-0'>
+    <div className='p-4 m-3 md:p-0 mx-auto'>
       {posts.map(({ slug, frontmatter }) => (
         <div key={frontmatter.title} className='p-4 m-3 md:p-0'>
           <Post slug={slug} frontmatter={frontmatter} />
