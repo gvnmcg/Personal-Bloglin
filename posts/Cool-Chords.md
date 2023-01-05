@@ -2,7 +2,7 @@
 title: 'Cool Chords web app'
 metaTitle: 'Guitar Fretboard Web App'
 metaDesc: 'Guitar Fretboard Web App'
-socialImage: 'images/cool-chords1.PNG'
+socialImage: 'assets/images/cool-chords1.PNG'
 date: '2022-12-22'
 tags: ['code', 'music']
 ---

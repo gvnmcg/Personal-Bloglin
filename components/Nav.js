@@ -16,8 +16,9 @@ export default function Nav() {
     <nav className=" py-10">
       <div className="flex justify-center container mx-auto ">
         <NavLink text={'Code'} url={'/tag/code'}/>
-        <NavLink text={'Book'} url={'/tag/books'}/>
-        <NavLink text={'Game'} url={'/tag/games'}/>
+        <NavLink text={'Books'} url={'/tag/books'}/>
+        <NavLink text={'Games'} url={'/tag/games'}/>
+        <NavLink text={'Music'} url={'/tag/music'}/>
       </div>
     </nav>
   );

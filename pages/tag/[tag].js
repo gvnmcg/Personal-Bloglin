@@ -9,6 +9,7 @@ export async function getStaticPaths() {
       "/tag/books",
       "/tag/code",
       "/tag/games",
+      "/tag/music",
     ],
     fallback: false,
   };
