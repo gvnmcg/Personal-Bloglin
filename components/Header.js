@@ -12,16 +12,9 @@ const asciiHeader = [
 
 export default function Header() {
   return (
-    <header className="mx-16 py-10">
-       
-      <div className="text-white flex container font-mono whitespace-pre ">
-        {asciiHeader[0]}<br></br>
-        {asciiHeader[1]}<br></br>
-        {asciiHeader[2]}<br></br>
-        {asciiHeader[3]}<br></br>
-        {asciiHeader[4]}<br></br>
-        {asciiHeader[5]}
-      </div>
+    <header className="ml-16 w-full  py-10">
+      <Image width={500} height={300} src={"/assets/images/sig2.png"}/>
+      
     </header>
   );
 }
