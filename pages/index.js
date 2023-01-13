@@ -1,40 +1,57 @@
-import fs from 'fs';
-import matter from 'gray-matter';
-import Image from 'next/image';
+
 import Link from 'next/link';
-import Post from '../components/Post';
-import Nav from '../components/Nav';
+import CMSFeed from './cmsFeed';
+import CMSPost from '../components/CMSPost';
+// import Post from '../components/Post';
+// import Nav from '../components/Nav';
 
 export async function getStaticProps() {
-  const files = fs.readdirSync('posts');
+  // const files = fs.readdirSync('posts');
 
-  const posts = files.map((fileName) => {
-    const slug = fileName.replace('.md', '');
-    const readFile = fs.readFileSync(`posts/${fileName}`, 'utf-8');
-    const { data: frontmatter } = matter(readFile);
-    return {
-      slug,
-      frontmatter,
-    };
-  });
+  // const posts = files.map((fileName) => {
+  //   const slug = fileName.replace('.md', '');
+  //   const readFile = fs.readFileSync(`posts/${fileName}`, 'utf-8');
+  //   const { data: frontmatter } = matter(readFile);
+  //   return {
+  //     slug,
+  //     frontmatter,
+  //   };
+  // });
+    //https://20qe52oi.api.sanity.io/v1/data/query/production?query=*%5B_type%20%3D%3D%20'post'%20%26%26%20defined(slug.current)%5D%7B'slug'%3Aslug.current%7D
+
+  const query = encodeURIComponent(`*[_type == 'post' && defined(slug.current)]{'slug':slug.current}`);
+  const url = `https://20qe52oi.api.sanity.io/v1/data/query/production?query=${query}`;
+  console.log(url)
+
+  const result = await fetch(url).then(res => res.json());
+  const results = result.result;
+  const posts = results.map( slugObject => ({
+      params: slugObject.slug
+    })
+  )
 
   return {
     props: {
-      posts,
+      posts
     },
   };
 }
 
 export default function Home({ posts }) {
-  let { slug, frontmatter } = posts[0]
-  console.log(slug)
+  
+  console.log(posts)
   return (
-    <div className='p-4 m-3 md:p-0 mx-auto'>
-      {posts.map(({ slug, frontmatter }) => (
-        <div key={frontmatter.title} className='p-4 m-3 md:p-0'>
-          <Post slug={slug} frontmatter={frontmatter} />
+    <div>
+      {/* <Feed /> */}
+      {posts.map(({ params }) => (
+        <div>
+          <CMSPost title={params.title} slug={params.slug}/>
+          <Link key={params} href={`/cms-post/${params}`}>
+            <a>{params}</a>
+          </Link>
         </div>
       ))}
+      <CMSFeed posts={posts} />
     </div>
   );
 }
