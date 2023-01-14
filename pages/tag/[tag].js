@@ -39,7 +39,6 @@ export async function getStaticProps({ params: { tag } }) {
 }
 
 export default function TaggedPosts({ filterPosts,tag }) {
-  // console.log(posts);
 
   return (
     <div className="p-4 md:p-0">
