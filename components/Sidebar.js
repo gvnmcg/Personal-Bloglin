@@ -5,7 +5,7 @@ import styles from "../styles/Sidebar.module.css"
 function SidebarLink({ text, url }) {
   return (
     <Link href={url}>
-      <a className="hover:bg-slate-300 hover:opacity-75 p-3 m-3 text-white hover:text-black">{text}</a>
+      <a className="hover:bg-slate-300 p-3 m-3 text-white hover:text-black">{text}</a>
     </Link>
   );
 }
@@ -14,10 +14,9 @@ export default function Sidebar() {
   return (
     // <div className={styles.container}>
     <div className=" bg-black m-3 sm:ml-9">
-      <div className="space-y-2 flex flex-row sm:flex-col items-center sm:space-x-2 justify-center flex-no-wrap ">
+      <div className=" flex flex-row sm:flex-col justify-center flex-no-wrap ">
         <SidebarLink text={"🏡"} url={"/"} />
-        <SidebarLink text={"Code"} url={"/"} />
-        <SidebarLink text={"Tools"} url={"/"} />
+        <SidebarLink text={"Cool-Chords!"} url={"https://cool-chords.netlify.app/"} />
       </div>
     </div>
   );

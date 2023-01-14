@@ -11,17 +11,12 @@ tags: ['code', 'music']
 
 # Cool Chords App
 
+[cool-chords.netlify.app](cool-chords.netlify.app)
 
-I made this app to find alternative chords while playing guitar.
-
-This is mostly an exercise.
-
-THe ability to save visualizations to certain tabs
-
-The UI is a html canvas.
+I made this App to construct and analyze Chords Sequences.
 
 The Goal is to include:
-- chord sequencing
-- key chord selection (I ii iii IV ...)
-- 
+- Chord Sequencing
+- Key-Chord Selection (I ii iii IV ...)
+- Fully Adjustable Tuning
 
