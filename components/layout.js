@@ -6,12 +6,15 @@ import Nav from "./Nav";
 
 export default function Layout({ children }) {
   return (
-    <div className="bg-blue-clouds bg-fixed bg-contain flex flex-col ">
+    // Background
+    <div className="bg-blue-clouds bg-fixed bg-repeat-round bg-contain flex flex-col ">
+      {/* Header always at the top.*/}
       <Header />
-
-      <div className="flex ">
+      {/* Responsive: default mobile -> sm:desktop */}
+      <div className="flex flex-col sm:flex-row">
         <Sidebar />
         <div className="flex flex-col mx-auto">
+          {/* Filters always on Top */}
           <Nav />
           <main>{children}</main>
         </div>
