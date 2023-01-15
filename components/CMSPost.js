@@ -19,7 +19,7 @@ export default function CMSPost({ post }){
     return (
         <div className='bg-white  m-7 rounded-xl shadow-sm hover:shadow-lg overflow-hidden'>
           <Link  href={`/cms-post/${post.slug}`}>
-            <a className='flex flex-row '>
+            <a className='flex flex-col sm:flex-row  '>
               <Image
                 width={300}
                 height={200}
