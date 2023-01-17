@@ -1,6 +1,7 @@
 import Link from 'next/link';
-import CMSFeed from '../../components/CMSFeed';
-import Filter from '../../components/Filters';
+// import CMSFeed from '../../components/CMSFeed';
+import CMSPost from '../../components/CMSPost';
+// import Filter from '../../components/Filters';
 
 const queryURL = (query) => `https://20qe52oi.api.sanity.io/v1/data/query/production?query=${query}`
 
@@ -54,7 +55,7 @@ export default function Home({ results, categories }) {
           <FilterLink key={catagory.title} text={catagory.title} url={"/filter/" + catagory.title} />
         ))}
       </div>
-      <CMSFeed posts={results} />
+      {results.map((post, ix) => <CMSPost key={ix} post={post} />)}
     </div>
   );
 }

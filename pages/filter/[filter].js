@@ -1,5 +1,4 @@
 import Link from "next/link";
-import CMSFeed from "../../components/CMSFeed";
 import CMSPost from "../../components/CMSPost";
 import Filter from "../../components/Filters";
 // import CMSPost from '../components/CMSPost';

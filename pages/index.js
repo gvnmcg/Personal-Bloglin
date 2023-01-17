@@ -1,5 +1,5 @@
-
-import CMSFeed from '../components/CMSFeed';
+import CMSPost from '../components/CMSPost';
+// import CMSFeed from '../components/CMSFeed';
 import Filter, {FilterLink} from '../components/Filters';
 import { queryURL } from '../utils/utils';
 
@@ -41,7 +41,7 @@ export default function Home({ results, categories }) {
           <FilterLink key={category.title} text={category.title} url={"/filter/" + category.title} />
         ))}
       </div>
-      <CMSFeed posts={results} />
+      {results.map((post, ix) => <CMSPost key={ix} post={post} />)}
     </div>
   );
 }
