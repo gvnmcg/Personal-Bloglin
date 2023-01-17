@@ -13,7 +13,7 @@ const asciiHeader = [
 export default function Header() {
   return (
     <header className="m-4 w-full py-10">
-      <Image width={500} height={300} src={"/assets/images/signPrint.png"}/>
+      <Image width={500} height={300} src={"/assets/images/signPrint.png"} alt={"Gavin McGuire"}/>
     </header>
   );
 }

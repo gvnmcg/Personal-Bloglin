@@ -1,4 +1,3 @@
-
 import Link from 'next/link';
 import CMSFeed from '../../components/CMSFeed';
 import Filter from '../../components/Filters';
@@ -52,7 +51,7 @@ export default function Home({ results, categories }) {
     <div className="flex flex-col justify-center container mx-auto ">
       <div className="flex flex-row justify-center container mx-auto ">
         {categories.map((catagory) => (
-          <FilterLink text={catagory.title} url={"/filter/" + catagory.title} />
+          <FilterLink key={catagory.title} text={catagory.title} url={"/filter/" + catagory.title} />
         ))}
       </div>
       <CMSFeed posts={results} />
