@@ -13,7 +13,7 @@ export default function CMSPost({ post }){
       dataset: 'production'
     })
     setImageUrl(urlBuilder.image(post.mainImage.asset._ref).toString())
-  },[])
+  },[post])
   
 
     return (
