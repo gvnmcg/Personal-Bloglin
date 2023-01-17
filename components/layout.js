@@ -8,7 +8,7 @@ export default function Layout({ children }) {
 
   return (
     // Background
-    <div className="bg-blue-clouds bg-fixed bg-repeat-round bg-contain flex flex-col">
+    <div className="flex bg-blue-clouds bg-fixed bg-repeat bg-contain flex flex-col">
       {/* Header always at the top.*/}
       <Header />
       {/* Responsive: default mobile -> sm:desktop */}
@@ -16,7 +16,7 @@ export default function Layout({ children }) {
         <Sidebar />
         <div className="flex flex-col mx-auto">
           {/* Filters always on Top */}
-          <Filter />
+          {/* <Filter /> */}
           <main>{children}</main>
         </div>
       </div>

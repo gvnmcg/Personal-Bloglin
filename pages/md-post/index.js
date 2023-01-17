@@ -2,6 +2,7 @@ import fs from "fs";
 import matter from "gray-matter";
 import ReactMarkdown from "react-markdown";
 import Post from "../../components/Post";
+import Nav from "../../components/Nav";
 
 export async function getStaticProps() {
   const files = fs.readdirSync("posts");
@@ -23,7 +24,7 @@ export async function getStaticProps() {
   };
 }
 
-export default function TaggedPosts({ posts }) {
+export default function Posts({ posts }) {
   return (
     <div className="flex flex-col mx-auto">
       <Nav />

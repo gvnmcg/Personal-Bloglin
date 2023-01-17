@@ -1,7 +1,7 @@
 import React from "react";
 import Link from "next/link";
 
-function FilterLink({ text, url }) {
+export function FilterLink({ text, url }) {
   return (
     <div>
       <Link href={url}>
@@ -13,12 +13,18 @@ function FilterLink({ text, url }) {
   );
 }
 
-export default function Filter() {
+export default function Filter({catagories}) {
   return (
     <nav className=" py-10">
       <div className="flex justify-center container mx-auto ">
-        <FilterLink text={"Movies"} url={"/filter/movies"} />
-        <FilterLink text={"Music"} url={"/filter/music"} />
+        {catagories.map((category) => (
+          <FilterLink 
+            key={category.title} 
+            text={category.title} 
+            url={"/filter/" + category.title} />
+        ))}
+        {/* // <FilterLink text={"Movies"} url={"/filter/movies"} />
+        // <FilterLink text={"Music"} url={"/filter/music"} /> */}
       </div>
     </nav>
   );

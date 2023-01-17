@@ -13,11 +13,14 @@ function SidebarLink({ text, url }) {
 export default function Sidebar() {
   return (
     // <div className={styles.container}>
-    <div className=" bg-black m-3 sm:ml-9">
+    <div className=" bg-black m-3 sm:ml-9 sm:h-screen">
       <div className=" flex flex-row sm:flex-col justify-center flex-no-wrap ">
         <SidebarLink text={"🏡"} url={"/"} />
-        <SidebarLink text={"static blog"} url={"/md-post"} />
-        <SidebarLink text={"Cool-Chords!"} url={"https://cool-chords.netlify.app/"} />
+        {/* <SidebarLink text={"blog"} url={"/cms-post"} /> */}
+        {/* <SidebarLink text={"Static Blog"} url={"/md-post"} /> */}
+        <SidebarLink text={"Cool Chords!"} url={"https://cool-chords.netlify.app/"} />
+        <SidebarLink text={"Resume"} url={"https://cool-chords.netlify.app/"} />
+        <SidebarLink text={"About Me"} url={"https://cool-chords.netlify.app/"} />
       </div>
     </div>
   );
