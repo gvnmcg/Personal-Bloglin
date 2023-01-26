@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import CMSPost from '../../components/CMSPost';
-import { sanityQueryURL } from '../../utils/utils';
+import { sanityQueryURL, mediaQueryURL } from '../../utils/utils';
 
 
 export async function getStaticProps() {
@@ -13,6 +13,12 @@ export async function getStaticProps() {
   const categoryResult = await fetch(sanityQueryURL(categoryQuery)).then(res => res.json());
   const categories = categoryResult.result;
   
+  const mediaQuery = encodeURIComponent(`*[_type == 'category' ]`);
+  const mediaResult = await fetch(mediaQueryURL(mediaQuery)).then(res => res.json());
+  const mediaInfo = mediaResult.result;
+  
+
+
   return {
     props: {
       results,
@@ -37,13 +43,19 @@ function FilterLink({ text, url }) {
 
 export default function Home({ results, categories }) {
   return (
-    <div className="flex flex-col justify-center container mx-auto ">
-      <div className="flex flex-row justify-center container mx-auto ">
-        {categories.map((catagory) => (
-          <FilterLink key={catagory.title} text={catagory.title} url={"/filter/" + catagory.title} />
+    <div className="container mx-auto flex flex-col justify-center ">
+      <div className="container mx-auto flex flex-row justify-center ">
+        {categories.map((category) => (
+          <FilterLink
+            key={category.title}
+            text={category.title}
+            url={"/filter/" + category.slug.current}
+          />
         ))}
       </div>
-      {results.map((post, ix) => <CMSPost key={ix} slug={post.slug} post={post} />)}
+      {results.map((post, ix) => (
+        <CMSPost key={ix} slug={post.slug} post={post} />
+      ))}
     </div>
   );
 }

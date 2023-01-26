@@ -1,14 +1,11 @@
 import Link from "next/link";
 import CMSPost from "../../components/CMSPost";
 import Filter from "../../components/Filters";
-// import CMSPost from '../components/CMSPost';
-
-const queryURL = (query) =>
-  `https://20qe52oi.api.sanity.io/v1/data/query/production?query=${query}`;
+import { sanityQueryURL } from '../../utils/utils';
 
 export async function getStaticPaths() {
   const categoryQuery = encodeURIComponent(`*[_type == 'category' ]`);
-  const categoryResult = await fetch(queryURL(categoryQuery)).then((res) =>
+  const categoryResult = await fetch(sanityQueryURL(categoryQuery)).then((res) =>
     res.json()
   );
   const categories = categoryResult.result;
@@ -19,13 +16,9 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps({ params: { filter } }) {
-  // const files = fs.readdirSync('posts');
 
-  //https://20qe52oi.api.sanity.io/v1/data/query/production?query=*%5B_type%20%3D%3D%20'post'%20%26%26%20defined(slug.current)%5D%7B'slug'%3Aslug.current%7D
-
-  // const query = encodeURIComponent(`*[_type == 'post' && defined(slug.current)]{'slug':slug.current}`);
   const categoryQuery = encodeURIComponent(`*[_type == 'category' ]`);
-  const categoryResult = await fetch(queryURL(categoryQuery)).then((res) =>
+  const categoryResult = await fetch(sanityQueryURL(categoryQuery)).then((res) =>
     res.json()
   );
   const categories = categoryResult.result;
@@ -34,7 +27,7 @@ export async function getStaticProps({ params: { filter } }) {
     .map((category) => category._id);
 
   const filteredQuery = encodeURIComponent(`*[_type == 'post']`);
-  const filteredResult = await fetch(queryURL(filteredQuery)).then((res) =>
+  const filteredResult = await fetch(sanityQueryURL(filteredQuery)).then((res) =>
     res.json()
   );
   const filteredPosts = filteredResult.result.filter((post) =>
@@ -43,7 +36,6 @@ export async function getStaticProps({ params: { filter } }) {
   const postsRefs = filteredResult.result.map(
     (post) => post.categories[0]._ref
   );
-  // const postsRefs = filteredResult.result.map(post => post.categories[0]._ref);
 
   return {
     props: {
@@ -75,7 +67,7 @@ export default function Home({
     <div>
       <Filter catagories={categories} />
       {filteredPosts.map((post) => (
-        <CMSPost key={post.title} post={post} />
+        <CMSPost key={post.title} slug={post.slug.current} post={post} />
       ))}
       <div className="flex justify-center container mx-auto "></div>
     </div>
