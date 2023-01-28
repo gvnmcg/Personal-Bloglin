@@ -11,11 +11,11 @@ export function FilterLink({ text, url }) {
   );
 }
 
-export default function Filter({ catagories }) {
+export default function Filter({ categories }) {
   return (
     <div className=" py-10">
-      <div className="container mx-auto flex justify-center ">
-        {catagories.map((category) => (
+      <div className="container mx-auto flex justify-center flex-wrap">
+        {categories.map((category) => (
           <FilterLink
             key={category.title}
             text={category.title}

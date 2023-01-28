@@ -16,7 +16,7 @@ export default function CMSPost({ slug, post }){
   },[post])
 
     return (
-      <div className=" light:bg-white m-7 overflow-hidden rounded-xl shadow-sm transition duration-500 hover:scale-110 hover:shadow-lg dark:bg-black dark:text-white">
+      <div className=" bg-white m-7 overflow-hidden rounded-xl shadow-sm transition duration-500 hover:scale-110 hover:shadow-lg dark:bg-black dark:text-white">
         <Link href={`/cms-post/${slug}`}>
           <a className="flex flex-col sm:flex-row  ">
             <Image
