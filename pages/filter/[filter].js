@@ -1,6 +1,5 @@
 import Link from "next/link";
 import CMSPost from "../../components/CMSPost";
-import CMSFeed from "../../components/CMSFeed";
 import Filter from "../../components/Filters";
 import { sanityQueryURL } from "../../utils/utils";
 
