@@ -1,18 +1,16 @@
 import Header from "./Header";
-import Footer from "./Footer";
-import Sidebar from "./Sidebar";
-import Nav from "./Nav";
-import Filter from "./Filters";
+import Sidebar from "./Sidebar"
+import style from "../styles/Layout.module.css"
 
 export default function Layout({ children }) {
 
   return (
     // Background
-    <div className="flex flex-col bg-gradient-to-b from-white to-black dark:from-black dark:to-white ">
+    <div className={style.container}>
       <Header />
-      <div className="flex flex-col sm:flex-row">
+      <div className={style.main}>
         <Sidebar />
-        <div className="mx-auto mt-7 flex flex-col">
+        <div className={style.content}>
           <main>{children}</main>
         </div>
       </div>

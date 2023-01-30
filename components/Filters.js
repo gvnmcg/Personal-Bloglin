@@ -1,10 +1,11 @@
 import React from "react";
 import Link from "next/link";
+import style from "../styles/Filter.module.css"
 
 export function FilterLink({ text, url }) {
   return (
     <Link href={url}>
-      <a className="bg-black text-white hover:opacity-75 m-7 p-3 rounded-md ">
+      <a className={style.filterLink}>
         {text}
       </a>
     </Link>
@@ -13,8 +14,8 @@ export function FilterLink({ text, url }) {
 
 export default function Filter({ categories }) {
   return (
-    <div className=" py-10">
-      <div className="container mx-auto flex justify-center flex-wrap">
+    <div className={style.filterContainer}>
+      <div className={style.filterOrientation}>
         {categories.map((category) => (
           <FilterLink
             key={category.title}

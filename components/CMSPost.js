@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import  ImageUrlBuilder from '@sanity/image-url';
 import Link from 'next/link';
 import Image from 'next/image';
+import style from "../styles/CMSPost.module.css"
 
 export default function CMSPost({ slug, post }){
 
@@ -16,7 +17,7 @@ export default function CMSPost({ slug, post }){
   },[post])
 
     return (
-      <div className=" bg-white m-7 overflow-hidden rounded-xl shadow-sm transition duration-500 hover:scale-110 hover:shadow-lg dark:bg-black dark:text-white">
+      <div className={style.postLink}>
         <Link href={`/cms-post/${slug}`}>
           <a className="flex flex-col sm:flex-row  ">
             <Image

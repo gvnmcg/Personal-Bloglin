@@ -1,14 +1,20 @@
 import React from "react";
 import Link from "next/link";
 import Image from "next/image";
+import style from "../styles/Header.module.css"
 
 export default function Header() {
   return (
-    <header className="bg-blue-clouds px-auto dark:bg-dark-fractal bg-cover bg-fixed bg-repeat text-center ">
+    <header className={style.container}>
+      <Link href={"/"}>
+        <a>
+          🏡
+        </a>
+      </Link>
       <Link href={"/"}>
         <a>
           <Image
-            className="w-full transition duration-500 hover:scale-75"
+            className={style.image}
             width={500}
             height={300}
             src={"/assets/images/signPrint.png"}
