@@ -1,0 +1,21 @@
+
+
+.postLink {
+    @apply 
+    bg-white 
+    m-7 
+    overflow-hidden 
+    rounded-xl 
+    shadow-sm 
+    transition 
+    duration-500 
+    
+    hover:scale-110 
+    hover:shadow-lg 
+    
+    dark:bg-black 
+    dark:text-white
+}
+
+
+

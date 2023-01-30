@@ -1,0 +1,18 @@
+
+
+.container {
+    @apply 
+    flex flex-col bg-gradient-to-b from-white to-black dark:from-black dark:to-white 
+}
+
+.main {
+    @apply
+    flex flex-col  justify-center align-middle sm:w-1/2 sm:mx-auto
+}
+
+.content {
+    @apply 
+    content-center mt-7 flex flex-col
+}
+
+

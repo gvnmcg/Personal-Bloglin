@@ -1,0 +1,27 @@
+
+
+.filterLink {
+    @apply 
+    bg-black 
+    text-white 
+    hover:opacity-75 
+    m-7 
+    p-3 
+    rounded-md
+}
+
+.filterContainer {
+    @apply
+    py-10
+}
+
+.filterOrientation {
+    @apply 
+    container 
+    mx-auto 
+    flex 
+    justify-center 
+    flex-wrap
+}
+
+
