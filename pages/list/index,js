@@ -1,61 +1,25 @@
-import Link from 'next/link';
-import CMSPost from '../../components/CMSPost';
-import { sanityQueryURL, mediaQueryURL } from '../../utils/utils';
+import BlockContent from "@sanity/block-content-to-react";
+import { sanityQueryURL } from '../../utils/utils';
 
 
 export async function getStaticProps() {
-  
-  const query = encodeURIComponent(`*[_type == 'post' && defined(slug.current) && defined(mainImage)]{'slug':slug.current, mainImage, title, categories}`);
-  const result = await fetch(sanityQueryURL(query)).then(res => res.json());
-  const results = result.result;
- 
-  const categoryQuery = encodeURIComponent(`*[_type == 'category' ]`);
-  const categoryResult = await fetch(sanityQueryURL(categoryQuery)).then(res => res.json());
-  const categories = categoryResult.result;
-  
-  const mediaQuery = encodeURIComponent(`*[_type == 'category' ]`);
-  const mediaResult = await fetch(mediaQueryURL(mediaQuery)).then(res => res.json());
-  const mediaInfo = mediaResult.result;
-  
-
+  const query = encodeURIComponent(`*[_type == 'list' && defined(slug.current) && defined(mainImage)]{'slug':slug.current, mainImage, title, categories}`);
+  const result = await fetch(sanityQueryURL(query)).then((res) => res.json());
+  const posts = result.result;
 
   return {
     props: {
-      results,
-      categories
+      posts,
     },
   };
 }
 
+export default function Home({ posts }) {
 
-function FilterLink({ text, url }) {
-    return (
-      <div>
-        <Link href={url}>
-          <a className="bg-black text-white hover:opacity-75 m-7 p-3 rounded-md ">
-            {text}
-          </a>
-        </Link>
-      </div>
-    );
-  }
-  
-
-export default function Home({ results, categories }) {
+  console.log(posts)
   return (
-    <div className="container mx-auto flex flex-col justify-center ">
-      <div className="container mx-auto flex flex-row justify-center ">
-        {categories.map((category) => (
-          <FilterLink
-            key={category.title}
-            text={category.title}
-            url={"/filter/" + category.slug.current}
-          />
-        ))}
-      </div>
-      {results.map((post, ix) => (
-        <CMSPost key={ix} slug={post.slug} post={post} />
-      ))}
+    <div className="prose mx-auto rounded-md bg-white p-7">
+      {JSON.stringify(posts)}
     </div>
   );
 }

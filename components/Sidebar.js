@@ -17,6 +17,14 @@ export default function Sidebar() {
         <SidebarLink
           text={"Cool Chords!"}
           url={"https://cool-chords.netlify.app/"}
+        /> 
+        <SidebarLink
+          text={"Lists"}
+          url={"/list"}
+        />
+        <SidebarLink
+          text={"List post"}
+          url={"/list/list-albums-2022"}
         />
       </div>
     </div>
