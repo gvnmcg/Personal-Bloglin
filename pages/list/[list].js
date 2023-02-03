@@ -50,7 +50,7 @@ export default function ListPage({ post }) {
       />
       {post.list.map((entry, entryIndex) => (
         <div key={entry.entryID} className="bg-slate-400">
-          <h1>{entry,entryIndex + 1}</h1>
+          <h1>{entryIndex + 1}</h1>
           {entry.entryID}
         </div>
       ))}
