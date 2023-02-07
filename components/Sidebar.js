@@ -18,6 +18,10 @@ export default function Sidebar() {
           text={"Cool Chords!"}
           url={"https://cool-chords.netlify.app/"}
         />
+        <SidebarLink
+          text={"About me"}
+          url={"/cms-post/about-me"}
+        />
       </div>
     </div>
   );
