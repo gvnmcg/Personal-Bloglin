@@ -10,23 +10,23 @@ export async function getStaticProps() {
   );
   const categories = categoryResult.result;
 
-  const query = encodeURIComponent(`*[_type == 'post' && defined(slug.current) && defined(mainImage)]{'slug':slug.current, mainImage, title, categories}`);
-  const result = await fetch(sanityQueryURL(query)).then(res => res.json());
-  const results = result.result;
+  const postQuery = encodeURIComponent(`*[_type == 'post' && defined(slug.current) && defined(mainImage)]{'slug':slug.current, mainImage, title, categories}`);
+  const postResult = await fetch(sanityQueryURL(postQuery)).then(res => res.json());
+  const postResults = postResult.result;
  
   return {
     props: {
-      results,
+      postResults,
       categories
     },
   };
 }
 
-export default function Home({ results, categories }) {
+export default function Home({ postResults, categories }) {
   return (
     <div>
       <Filter categories={categories}/>
-      <CMSFeed posts={results} />
+      <CMSFeed posts={postResults} />
     </div>
   );
 }

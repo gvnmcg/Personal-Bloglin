@@ -4,6 +4,7 @@ import '../styles/globals.css';
 function MyApp({ Component, pageProps }) {
   return (
     <Layout>
+      <title>Gavin McGuire</title>
       <Component {...pageProps} />
     </Layout>
   );

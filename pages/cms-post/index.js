@@ -39,8 +39,8 @@ export default function Home({ results, categories }) {
   return (
     <div className="flex flex-col justify-center container mx-auto ">
       <div className="flex flex-row justify-center container mx-auto ">
-        {categories.map((catagory) => (
-          <FilterLink key={catagory.title} text={catagory.title} url={"/filter/" + catagory.title} />
+        {categories.map((category) => (
+          <FilterLink key={category.title} text={category.title} url={"/filter/" + category.title} />
         ))}
       </div>
       {results.map((post, ix) => <CMSPost key={ix} slug={post.slug} post={post} />)}

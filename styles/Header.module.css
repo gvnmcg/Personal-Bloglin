@@ -4,7 +4,9 @@
     bg-cover 
     bg-fixed 
     bg-repeat 
+    
     text-center 
+
     dark:bg-dark-fractal;
 }
 
@@ -19,6 +21,7 @@
 .link {
   @apply m-3 p-3 
     text-white 
+
     hover:bg-slate-300 
     hover:text-black;
 }

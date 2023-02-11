@@ -2,7 +2,7 @@
 
 .container {
     @apply 
-    flex flex-col bg-gradient-to-b from-white to-black dark:from-black dark:to-white 
+    flex flex-col bg-gradient-to-b from-white to-black dark:from-black dark:to-white dark:bg-black
 }
 
 .main {
