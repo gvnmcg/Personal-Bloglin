@@ -1,0 +1,17 @@
+import clientPromise from "../../lib/mongodb";
+// import { connectToDatabase } from 'src/utils'
+
+// connectToDatabase()
+
+export default async (req, res) => {
+  try {
+    const client = await clientPromise;
+    const db = client.db("Blog_Content");
+    const posts = await db.collection("Posts").find({}).toArray();
+
+    return res.status(200).json(posts);
+  } catch (e) {
+    console.error(e);
+    res.status(500).json({ message: "Something went wrong." });
+  }
+};

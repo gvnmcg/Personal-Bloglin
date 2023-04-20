@@ -1,6 +1,7 @@
 import CMSFeed from '../components/CMSFeed';
-import Filter, {FilterLink} from '../components/Filters';
-import { sanityQueryURL } from '../utils/utils';
+import Filter, { FilterLink } from '../components/Filters';
+import { sanityQueryURL } from '../lib/utils';
+import DBtest from './DBtest';
 
 export async function getStaticProps() {
   
@@ -26,6 +27,7 @@ export default function Home({ postResults, categories }) {
   return (
     <div>
       <Filter categories={categories}/>
+      {/* <DBtest/> */}
       <CMSFeed posts={postResults} />
     </div>
   );

@@ -1,5 +1,5 @@
 import BlockContent from "@sanity/block-content-to-react";
-import { sanityQueryURL } from '../../utils/utils';
+import { sanityQueryURL } from '../../lib/utils';
 
 export async function getStaticPaths() {
   const query = encodeURIComponent(
