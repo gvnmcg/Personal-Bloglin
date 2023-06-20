@@ -2,6 +2,7 @@ import React from "react";
 import Link from "next/link";
 import Image from "next/image";
 import style from "../styles/Header.module.css"
+import Account from "./Account";
 
 export default function Header() {
   return (
@@ -22,6 +23,7 @@ export default function Header() {
           />
         </a>
       </Link>
+      <Account />
     </header>
   );
 }
